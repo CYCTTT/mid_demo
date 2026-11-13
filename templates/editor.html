@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>編輯者管理 - 投稿審查系統</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+
+<body>
+    <header class="header">
+        <h2>投稿審查系統</h2>
+        <span>Editor Management</span>
+    </header>
+
+    <main class="page-container">
+
+        <!-- 頁面標題 -->
+        <div class="page-heading">
+            <div>
+                <h1>編輯者管理頁面</h1>
+                <p>查看待審查文章並進行審查作業</p>
+            </div>
+
+            <a href="{{ url_for('home') }}" class="back-link">
+                ← 返回首頁
+            </a>
+        </div>
+
+        <!-- 待審查投稿清單 -->
+        <section class="panel">
+            <div class="section-heading">
+                <h2>待審查投稿清單</h2>
+
+                <button
+                    id="refreshEditorButton"
+                    class="secondary-button"
+                >
+                    重新整理
+                </button>
+            </div>
+
+            <div id="pendingList">
+                <p>正在載入待審查投稿...</p>
+            </div>
+        </section>
+
+        <!-- 文章詳細內容 -->
+        <section
+            class="panel"
+            id="reviewPanel"
+            style="display: none;"
+        >
+            <h2>文章審查</h2>
+
+            <div class="review-info">
+                <p>
+                    <strong>作者：</strong>
+                    <span id="reviewAuthor"></span>
+                </p>
+
+                <p>
+                    <strong>文章分類：</strong>
+                    <span id="reviewCategory"></span>
+                </p>
+
+                <p>
+                    <strong>文章標題：</strong>
+                    <span id="reviewTitle"></span>
+                </p>
+            </div>
+
+            <div class="form-group">
+                <label>文章內容</label>
+
+                <div
+                    id="reviewContent"
+                    class="review-content"
+                ></div>
+            </div>
+
+            <div class="review-actions">
+
+                <button
+                    id="approveButton"
+                    class="approve-button"
+                >
+                    通過審查
+                </button>
+
+                <button
+                    id="returnButton"
+                    class="return-button"
+                >
+                    退回修改
+                </button>
+
+                <button
+                    id="closeReviewButton"
+                    class="secondary-button"
+                >
+                    關閉
+                </button>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 投稿審查系統
+    </footer>
+
+    <script src="{{ url_for('static', path='/js/editor.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投稿審查系統</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+<body>
+
+    <header class="header">
+        <h2>投稿審查系統</h2>
+        <span>Submission & Review System</span>
+    </header>
+
+    <main class="home-container">
+
+        <h1>歡迎使用投稿審查系統</h1>
+        <p class="subtitle">請選擇您要使用的功能</p>
+
+        <div class="role-container">
+
+            <a href="{{ url_for('author_page') }}">
+                <h2 style="font-size:50px">作者專區</h2>
+                <p>新增投稿、管理文章及查看審查狀態</p>
+                <span class="role-button">進入作者專區 →</span>
+            </a>
+
+            <a href="{{ url_for('editor_page') }}">
+                <h2 style="font-size:50px">編輯專區</h2>
+                <p>查看待審文章及進行審查作業</p>
+                <span class="role-button">進入編輯專區 →</span>
+            </a>
+
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 投稿審查系統
+    </footer>
+
+</body>
+</html>

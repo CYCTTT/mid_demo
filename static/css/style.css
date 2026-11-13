@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", sans-serif;
+    background-color: #f4f6fa;
+    color: #263247;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: #ffffff;
+    padding: 22px 8%;
+    border-bottom: 1px solid #e5e9f0;
+}
+
+.header h2 {
+    display: inline-block;
+    font-size: 22px;
+}
+
+.header span {
+    margin-left: 12px;
+    color: #8993a4;
+    font-size: 13px;
+}
+
+.home-container {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.home-container h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #7c8799;
+    margin-bottom: 50px;
+}
+
+.role-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.role-card {
+    width: 330px;
+    padding: 35px 25px;
+    background-color: white;
+    border: 1px solid #e5e9f0;
+    border-radius: 14px;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.role-icon {
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+.role-card h2 {
+    margin-bottom: 15px;
+}
+
+.role-card p {
+    color: #7c8799;
+    font-size: 14px;
+    line-height: 1.8;
+    min-height: 50px;
+}
+
+.role-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 22px;
+    border-radius: 7px;
+    color: white;
+    background-color: #3978d5;
+}
+
+.editor-card .role-button {
+    background-color: #159b78;
+}
+
+footer {
+    text-align: center;
+    color: #9aa3b2;
+    font-size: 13px;
+    padding: 25px;
+}
+
+@media (max-width: 700px) {
+    .role-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .role-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .header span {
+        display: block;
+        margin: 5px 0 0;
+    }
+}
+
+/* 作者管理頁面 */
+
+.page-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.page-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-heading h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.page-heading p {
+    color: #7c8799;
+}
+
+.back-link {
+    color: #3978d5;
+    text-decoration: none;
+}
+
+.panel {
+    background-color: white;
+    padding: 28px;
+    margin-bottom: 25px;
+    border: 1px solid #e5e9f0;
+    border-radius: 12px;
+}
+
+.panel h2 {
+    font-size: 20px;
+    margin-bottom: 22px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dce2eb;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.primary-button,
+.secondary-button {
+    border: none;
+    padding: 11px 22px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.primary-button {
+    background-color: #3978d5;
+    color: white;
+}
+
+.secondary-button {
+    background-color: #eaf1fb;
+    color: #3978d5;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+    .page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* 投稿清單表格 */
+
+#submissionList {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+#submissionList table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#submissionList th,
+#submissionList td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e5e9f0;
+}
+
+#submissionList th {
+    background-color: #f4f6fa;
+    color: #526078;
+}
+
+#submissionList tr:hover {
+    background-color: #f8faff;
+}
+
+/* 投稿操作按鈕 */
+
+.action-button {
+    border: none;
+    padding: 7px 12px;
+    margin: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.edit-button {
+    background-color: #eaf1fb;
+    color: #3978d5;
+}
+
+.delete-button {
+    background-color: #fdecec;
+    color: #d9534f;
+}
+
+.submit-button {
+    background-color: #e5f6ef;
+    color: #159b78;
+}
+
+.action-button:hover {
+    opacity: 0.8;
+}
+
+/* 編輯投稿區域 */
+
+#editPanel {
+    border-left: 5px solid #3978d5;
+    scroll-margin-top: 25px;
+}
+
+#editPanel h2 {
+    color: #3978d5;
+}
+
+#editPanel .secondary-button {
+    margin-left: 8px;
+}
+
+#editPanel input:focus,
+#editPanel textarea:focus {
+    outline: none;
+    border-color: #3978d5;
+    box-shadow: 0 0 0 3px rgba(57, 120, 213, 0.1);
+}
+
+/* =========================
+   編輯者管理頁面
+========================= */
+
+#pendingList {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+#pendingList table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#pendingList th,
+#pendingList td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e5e9f0;
+}
+
+#pendingList th {
+    background-color: #f4f6fa;
+    color: #526078;
+}
+
+#pendingList tr:hover {
+    background-color: #f8faff;
+}
+
+.review-info {
+    background-color: #f4f6fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.review-info p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.review-info p:last-child {
+    margin-bottom: 0;
+}
+
+.review-content {
+    min-height: 180px;
+    padding: 18px;
+    border: 1px solid #dce2eb;
+    border-radius: 8px;
+    background-color: #fafbfd;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.review-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.approve-button,
+.return-button {
+    border: none;
+    padding: 11px 22px;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.approve-button {
+    background-color: #159b78;
+}
+
+.return-button {
+    background-color: #d9534f;
+}
+
+.approve-button:hover,
+.return-button:hover {
+    opacity: 0.85;
+}
+
+/* 編輯者文章審查區域 */
+
+#reviewPanel {
+    border-left: 5px solid #159b78;
+    scroll-margin-top: 25px;
+}
+
+#reviewPanel h2 {
+    color: #159b78;
+}
+
+#reviewContent {
+    overflow-wrap: anywhere;
+}
+
+.approve-button:hover {
+    background-color: #107b60;
+}
+
+.return-button:hover {
+    background-color: #bd403c;
+}
+
+.review-actions button {
+    transition: 0.2s;
+}

@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作者管理 - 投稿審查系統</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+
+<body>
+    <header class="header">
+        <h2>投稿審查系統</h2>
+        <span>Author Management</span>
+    </header>
+
+    <main class="page-container">
+
+        <div class="page-heading">
+            <div>
+                <h1>作者管理頁面</h1>
+                <p>管理您的投稿文章及審查進度</p>
+            </div>
+            <a href="{{ url_for('home') }}" class="back-link">
+                ← 返回首頁
+            </a>
+        </div>
+
+        <!-- 作者資訊 -->
+        <section class="panel">
+            <h2>作者資訊</h2>
+
+            <div class="form-group">
+                <label for="authorName">作者名稱</label>
+                <input
+                    type="text"
+                    id="authorName"
+                    placeholder="請輸入作者名稱"
+                    value="測試作者"
+                >
+            </div>
+        </section>
+
+        <!-- 新增投稿 -->
+        <section class="panel">
+            <h2>新增投稿</h2>
+
+            <form id="submissionForm">
+
+                <div class="form-group">
+                    <label for="category">文章分類</label>
+                    <input
+                        type="text"
+                        id="category"
+                        placeholder="例如：資訊科技"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="title">文章標題</label>
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="請輸入文章標題"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="content">文章內容</label>
+                    <textarea
+                        id="content"
+                        rows="6"
+                        placeholder="請輸入文章內容"
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    新增投稿
+                </button>
+
+            </form>
+        </section>
+			
+		<!-- 編輯投稿區域 -->
+		<section class="panel" id="editPanel" style="display: none;">
+			<h2>編輯投稿</h2>
+
+			<form id="editForm">
+
+				<div class="form-group">
+					<label for="editCategory">文章分類</label>
+					<input
+						type="text"
+						id="editCategory"
+						required
+					>
+				</div>
+
+				<div class="form-group">
+					<label for="editTitle">文章標題</label>
+					<input
+						type="text"
+						id="editTitle"
+						required
+					>
+				</div>
+
+				<div class="form-group">
+					<label for="editContent">文章內容</label>
+					<textarea
+						id="editContent"
+						rows="8"
+						required
+					></textarea>
+				</div>
+
+				<button type="submit" class="primary-button">
+					儲存修改
+				</button>
+
+				<button
+					type="button"
+					id="cancelEditButton"
+					class="secondary-button"
+				>
+					取消編輯
+				</button>
+
+			</form>
+		</section>
+
+        <!-- 投稿清單 -->
+        <section class="panel">
+            <div class="section-heading">
+                <h2>我的投稿清單</h2>
+                <button id="refreshButton" class="secondary-button">
+                    重新整理
+                </button>
+            </div>
+
+            <div id="submissionList">
+                <p>正在載入投稿資料...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 投稿審查系統
+    </footer>
+
+    <script src="{{ url_for('static', path='/js/author.js') }}"></script>
+</body>
+</html>
